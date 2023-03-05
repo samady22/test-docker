@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  web:
+    build: #if we have Docker file with other extension then we use context(path to our dockerfile.dev)
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
